@@ -48,5 +48,10 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
+
+        // vamos defini a funçao que vai devolver a view de register(Formulario
+        Fortify::registerView(function () {
+            return view('auth.register');
+        });
     }
 }
