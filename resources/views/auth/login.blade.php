@@ -8,11 +8,11 @@
                     <p class="display-6 text-center">LOGIN</p>
                     <div class="mb-3">
                         <label for="email">Usuário</label>
-                        <input type="email" name="email" id="email" class="form-control">
+                        <input type="email" name="email" id="email" class="form-control" autocomplete="email">
                     </div>
                     <div class="mb-3">
                         <label for="password">Senha</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control" autocomplete="current-password">
                     </div>
 
                     <div class="mt-4 d-flex justify-content-between">
@@ -24,6 +24,27 @@
                         </div>
                     </div>
                 </form>
+                {{--         erros       --}}
+{{--                @if($errors->any())--}}
+{{--                    <div class="alert alert-danger mt-4">--}}
+{{--                        <ul class="m-0">--}}
+{{--                            @foreach($errors->all() as $error)--}}
+{{--                                <li>{{$error}}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
+
+
+                @if($errors->any())
+                <div class="alert alert-danger mt-4">
+                    <ul class="m-0">
+                        @foreach($errors->all() as $error)
+                            <li>{{$error}}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
             </div>
         </div>
     </div>

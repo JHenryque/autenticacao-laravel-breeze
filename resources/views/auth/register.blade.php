@@ -12,15 +12,15 @@
                     </div>
                     <div class="mb-3">
                         <label for="email">Usuário</label>
-                        <input type="mail" name="email" id="email" class="form-control">
+                        <input type="email" name="email" id="email" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label for="password">Senha</label>
-                        <input type="password" name="password" id="password" class="form-control">
+                        <input type="password" name="password" id="password" class="form-control" autocomplete="password">
                     </div>
                     <div class="mb-3">
                         <label for="password_confirmation">Confirmação da senha</label>
-                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" autocomplete="password_confirmation">
                     </div>
 
                     <div class="mt-4 d-flex justify-content-between">
@@ -33,15 +33,16 @@
                     </div>
                 </form>
                 {{--         erros       --}}
-                @if($errors->any())
+                @if ($errors->any())
                     <div class="alert alert-danger mt-4">
                         <ul class="m-0">
                             @foreach($errors->all() as $error)
-                                <li>{{$error}}</li>
+                                <li>{{ $error }}</li>
                             @endforeach
                         </ul>
                     </div>
                 @endif
+
             </div>
         </div>
     </div>
